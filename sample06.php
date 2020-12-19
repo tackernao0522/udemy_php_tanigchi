@@ -19,11 +19,15 @@
 <h2>Practice</h2>
 <pre>
 <?php
-$i = 1;
+// $i = 1;
 
-while ($i <= 365) {
+// while ($i <= 365) {
+//   print($i . "\n");
+//   $i++; // インクリメント(increment=加算) $i-- デクリメント(decrement=減算)
+// }
+
+for ($i = 1; $i <= 365; $i++) {
   print($i . "\n");
-  $i = $i + 1;
 }
 
 ?>
