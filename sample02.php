@@ -21,7 +21,7 @@
     <h2>Practice</h2>
     <pre>
       <?php
-      print("I'm studying \"PHP\"");
+      print(123+2*5/3);
       ?>
     </pre>
   </main>
