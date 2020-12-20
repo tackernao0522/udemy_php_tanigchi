@@ -20,7 +20,11 @@
 <pre>
 <?php
 // print (time() + 60 * 60 * 24); // 60秒 * 60分 * 24時間 次の日の意味になる
-print (date('n/j(D)', time() + 60 * 60 * 24));
+for ($i = 1; $i <=1000; $i++) :
+  $date = strtotime('+' . $i . 'day');
+  print (date('n/j(D)', $date));
+  print "\n";
+endfor;
 ?>
 </pre>
 </main>
