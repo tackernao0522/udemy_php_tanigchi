@@ -20,9 +20,17 @@
 <pre>
 <?php
 // print (time() + 60 * 60 * 24); // 60秒 * 60分 * 24時間 次の日の意味になる
-for ($i = 1; $i <=1000; $i++) :
+// for ($i = 1; $i <=1000; $i++) :
+//   $date = strtotime('+' . $i . 'day');
+//   $week_name = ['日', '月', '火', '水', '木', '金', '土'];
+//   print (date('n/j' . '(' . $week_name[date("w", $date)] . ')', $date));
+//   print "\n";
+// endfor;
+
+for ($i = 1; $i <=365; $i++) :
   $date = strtotime('+' . $i . 'day');
-  print (date('n/j(D)', $date));
+  $week_name = ['日', '月', '火', '水', '木', '金', '土'];
+  print (date("n/j({$week_name[date("w", $date)]})", $date));
   print "\n";
 endfor;
 ?>
