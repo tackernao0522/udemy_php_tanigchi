@@ -24,9 +24,16 @@ try {
 } catch(PDOException $e) {
   echo 'DB接続エラー: ' . $e->getMessage();
 }
+// exec 影響を与えた行の数を返す
+// $count = $db->exec('INSERT INTO my_items SET maker_id=1, item_name="ぶどう", price=550, keyword="紫,甘い,美味しい"');
+// echo $count . '件のデータを挿入しました';
 
-$count = $db->exec('INSERT INTO my_items SET maker_id=1, item_name="ぶどう", price=550, keyword="紫,甘い,美味しい"');
-echo $count . '件のデータを挿入しました';
+// query select構文の得られた値を受け取る
+$records = $db->query('SELECT * FROM my_items');
+while ($record = $records->fetch()) {
+  var_dump($record);
+  // print($record['item_name'] . "\n");
+}
 ?>
 </pre>
 </main>
