@@ -18,11 +18,7 @@
 <main>
 <h2>Practice</h2>
 <?php
-try {
-  $db = new PDO('mysql:dbname=mydb2;host=localhost;port=8889;charset=utf8', 'root', 'root');
-} catch(PDOException $e) {
-  echo 'DB接続エラー: ' . $e->getMessage();
-}
+require('dbconnect.php');
 // exec 影響を与えた行の数を返す
 // $count = $db->exec('INSERT INTO my_items SET maker_id=1, item_name="ぶどう", price=550, keyword="紫,甘い,美味しい"');
 // echo $count . '件のデータを挿入しました';

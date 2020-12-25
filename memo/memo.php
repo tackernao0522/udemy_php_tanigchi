@@ -18,11 +18,7 @@
 <main>
 <h2>Practice</h2>
 <?php
-try {
-  $db = new PDO('mysql:dbname=mydb2;host=localhost;port=8889;charset=utf8', 'root', 'root');
-} catch(PDOException $e) {
-  echo 'DB接続エラー: ' . $e->getMessage();
-}
+require('dbconnect.php');
 
 $id = $_REQUEST['id'];
 if (!is_numeric($id) || $id <= 0) {
