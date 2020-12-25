@@ -31,8 +31,7 @@ try {
 // query select構文の得られた値を受け取る
 $records = $db->query('SELECT * FROM my_items');
 while ($record = $records->fetch()) {
-  var_dump($record);
-  // print($record['item_name'] . "\n");
+  print($record['item_name'] . "\n");
 }
 ?>
 </pre>
