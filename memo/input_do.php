@@ -25,7 +25,8 @@
     // post等の入力処理の場合はprepareを使う
     $statement = $db->prepare('INSERT INTO memos SET memo=?, created_at=NOW()');
     $statement->bindParam(1, $_POST['memo']);
-    $statement->execute(array($_POST['memo']));
+    $statement->execute();
+    // $statement->execute(array($_POST['memo']));
     echo 'メッセージが登録されました';
   } catch(PDOException $e) {
     echo 'DB接続エラー：' . $e->getMessage();
