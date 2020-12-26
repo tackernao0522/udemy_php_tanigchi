@@ -50,6 +50,12 @@
         <time><?php print($memo['created_at']); ?></time>
         <hr>
       <?php endwhile; ?>
+
+      <?php if ($page >= 2) : ?>
+        <a href="index.php?page=<?php print($page - 1); ?>"><?php print($page - 1); ?>ページ目へ</a>
+      <?php endif; ?>
+      |
+      <a href="index.php?page=<?php print($page + 1); ?>"><?php print($page + 1); ?>ページ目へ</a>
     </article>
   </main>
 </body>
