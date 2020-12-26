@@ -55,7 +55,14 @@
         <a href="index.php?page=<?php print($page - 1); ?>"><?php print($page - 1); ?>ページ目へ</a>
       <?php endif; ?>
       |
+      <?php
+      $counts = $db->query('SELECT count(*) as cnt FROM memos');
+      $count = $counts->fetch();
+      $max_page = ceil($count['cnt'] / 5);
+      if ($page < $max_page) :
+      ?>
       <a href="index.php?page=<?php print($page + 1); ?>"><?php print($page + 1); ?>ページ目へ</a>
+      <?php endif ?>
     </article>
   </main>
 </body>
