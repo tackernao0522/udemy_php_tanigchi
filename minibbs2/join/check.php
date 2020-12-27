@@ -1,8 +1,23 @@
 <?php
 session_start();
+require('../dbconnect.php');
 
 if (!isset($_SESSION['join'])) { // ある場合はtrue ない場合はfalse
   header('Location: index.php');
+  exit();
+}
+
+if (!empty($_POST)) {
+  $statement = $db->prepare('INSERT INTO members SET name=?, email=?, password=?, picture=?, created=NOW()');
+  $statement->execute(array(
+    $_SESSION['join']['name'], // name属性
+    $_SESSION['join']['email'], // name属性
+    sha1($_SESSION['join']['password']), // 暗号化処理
+    $_SESSION['join']['image'],
+  ));
+  unset($_SESSION['join']); // session変数を空にすると言う命令
+
+  header('Location: thanks.php');
   exit();
 }
 ?>
